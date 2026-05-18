@@ -60,7 +60,7 @@ bun run test             # Vitest
 | PRD               | Requisitos de produto               | `create-prd`                                                            |
 | Tech Spec         | Especificação técnica               | `create-techspec`                                                       |
 | Tasks             | Planejamento de tarefas             | `create-tasks`                                                         |
-| Implementação     | Execução de tarefas                 | `executar-task`                                                       |
+| Implementação     | Execução de tarefas                 | `execute-task`                                                       |
 | Code Review       | Revisão de código                   | `executar-review`, `task-review`                                      |
 | QA                | Quality Assurance                   | `executar-qa`                                                         |
 | Bugfix            | Correção de bugs                    | `executar-bugfix`                                                     |

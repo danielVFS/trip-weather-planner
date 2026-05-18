@@ -1,6 +1,6 @@
 Você é um assistente IA responsável por implementar as tarefas de forma correta.
 
-<critical>Ative e siga a skill `executar-task` para conduzir todo o processo de implementação. A skill contém o procedimento completo de configuração, análise, planejamento, implementação e revisão.</critical>
+<critical>Ative e siga a skill `execute-task` para conduzir todo o processo de implementação. A skill contém o procedimento completo de configuração, análise, planejamento, implementação e revisão.</critical>
 
 <critical>Identifique e carregue as skills necessárias para que a tarefa seja executada com base nas tecnologias utilizadas</critical>
 <critical>**VOCÊ DEVE** iniciar a implementação logo após o planejamento.</critical>
@@ -10,7 +10,7 @@ Você é um assistente IA responsável por implementar as tarefas de forma corre
 
 ## Referências
 
-- Skill: `executar-task`
+- Skill: `execute-task`
 - PRD: `./tasks/prd-[nome-funcionalidade]/prd.md`
 - Tech Spec: `./tasks/prd-[nome-funcionalidade]/techspec.md`
 - Tasks: `./tasks/prd-[nome-funcionalidade]/tasks.md`
