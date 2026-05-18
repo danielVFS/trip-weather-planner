@@ -8,26 +8,31 @@ description: Creates Technical Specifications from existing PRDs, translating pr
 ## Procedures
 
 **Step 1: Validate Prerequisites**
+
 1. Confirm the feature slug has been provided.
 2. Verify the PRD exists at `tasks/prd-[feature-slug]/prd.md`. If missing, halt and report.
 
 **Step 2: Analyze PRD (Mandatory)**
+
 1. Read the PRD completely — do NOT skip this step.
 2. Identify technical content, constraints, and success metrics.
 3. Extract core requirements for architectural consideration.
 
 **Step 3: Deep Project Analysis (Mandatory)**
+
 1. Explore the codebase to discover files, modules, interfaces, and integration points.
 2. Map symbols, dependencies, and critical paths.
 3. Analyze: callers/callees, configs, middleware, persistence, concurrency, error handling, tests, infra.
 4. Explore solution strategies, patterns, risks, and alternatives.
 
 **Step 4: Research (Mandatory)**
+
 1. Use Context7 MCP to resolve technical questions about frameworks and libraries.
 2. Perform at least 3 Web Searches to gather business rules and general information.
 3. Complete all research BEFORE asking clarification questions.
 
 **Step 5: Technical Clarifications (Mandatory)**
+
 1. Explore the project BEFORE asking questions.
 2. Ask focused clarification questions using the AskUserQuestion tool covering:
    - Domain positioning.
@@ -38,10 +43,12 @@ description: Creates Technical Specifications from existing PRDs, translating pr
 3. Do NOT proceed until answers are received.
 
 **Step 6: Standards Compliance Mapping (Mandatory)**
+
 1. Identify project skills in `.claude/skills/` that apply to this spec.
 2. Highlight deviations with justification and compliant alternatives.
 
 **Step 7: Generate Tech Spec (Mandatory)**
+
 1. Read the template at `assets/techspec-template.md`.
 2. Provide: architecture overview, component design, interfaces, data models, endpoints, integration points, impact analysis, test strategy, observability.
 3. Focus on HOW, not WHAT (the PRD owns what/why).
@@ -52,16 +59,19 @@ description: Creates Technical Specifications from existing PRDs, translating pr
 8. Prefer existing libraries over custom development.
 
 **Step 8: Save Tech Spec (Mandatory)**
+
 1. Save to: `tasks/prd-[feature-slug]/techspec.md`.
 2. Confirm the write operation and path.
 
 ## Core Principles
+
 - Tech Spec focuses on HOW, not WHAT (PRD owns the what/why).
 - Prefer simple, evolutionary architecture with clear interfaces.
 - Provide testability and observability considerations upfront.
 - Prefer existing libraries over custom solutions.
 
 ## Quality Checklist
+
 - [ ] PRD reviewed.
 - [ ] Deep repository analysis completed.
 - [ ] Key technical clarifications answered.
@@ -71,6 +81,7 @@ description: Creates Technical Specifications from existing PRDs, translating pr
 - [ ] Final output path provided and confirmed.
 
 ## Error Handling
-- If the PRD does not exist at the expected path, halt and ask the user to create it first via the `cria-prd` skill.
+
+- If the PRD does not exist at the expected path, halt and ask the user to create it first via the `create-prd` skill.
 - If Context7 MCP is unavailable, fall back to Web Search for technical documentation.
 - If the output file already exists, confirm with the user before overwriting.

@@ -57,7 +57,7 @@ bun run test             # Vitest
 | Backend           | Hono, Bun runtime                   | `hono`                                                                |
 | Testes            | Vitest (unit), Playwright (e2e)     | —                                                                     |
 | Design / UX       | Interface, acessibilidade           | `ui-ux-pro-max`, `web-design-guidelines`                              |
-| PRD               | Requisitos de produto               | `cria-prd`                                                            |
+| PRD               | Requisitos de produto               | `create-prd`                                                            |
 | Tech Spec         | Especificação técnica               | `cria-techspec`                                                       |
 | Tasks             | Planejamento de tarefas             | `criar-tasks`                                                         |
 | Implementação     | Execução de tarefas                 | `executar-task`                                                       |
