@@ -59,7 +59,7 @@ bun run test             # Vitest
 | Design / UX       | Interface, acessibilidade           | `ui-ux-pro-max`, `web-design-guidelines`                              |
 | PRD               | Requisitos de produto               | `create-prd`                                                            |
 | Tech Spec         | Especificação técnica               | `create-techspec`                                                       |
-| Tasks             | Planejamento de tarefas             | `criar-tasks`                                                         |
+| Tasks             | Planejamento de tarefas             | `create-tasks`                                                         |
 | Implementação     | Execução de tarefas                 | `executar-task`                                                       |
 | Code Review       | Revisão de código                   | `executar-review`, `task-review`                                      |
 | QA                | Quality Assurance                   | `executar-qa`                                                         |
