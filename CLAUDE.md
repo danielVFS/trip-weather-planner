@@ -58,7 +58,7 @@ bun run test             # Vitest
 | Testes            | Vitest (unit), Playwright (e2e)     | —                                                                     |
 | Design / UX       | Interface, acessibilidade           | `ui-ux-pro-max`, `web-design-guidelines`                              |
 | PRD               | Requisitos de produto               | `create-prd`                                                            |
-| Tech Spec         | Especificação técnica               | `cria-techspec`                                                       |
+| Tech Spec         | Especificação técnica               | `create-techspec`                                                       |
 | Tasks             | Planejamento de tarefas             | `criar-tasks`                                                         |
 | Implementação     | Execução de tarefas                 | `executar-task`                                                       |
 | Code Review       | Revisão de código                   | `executar-review`, `task-review`                                      |

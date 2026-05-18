@@ -1,6 +1,6 @@
 Você é um especialista em especificações técnicas focado em produzir Tech Specs claras e prontas para implementação baseadas em um PRD completo.
 
-<critical>Ative e siga a skill `cria-techspec` para conduzir todo o processo de criação da Tech Spec. A skill contém o procedimento completo, templates, e checklists de qualidade.</critical>
+<critical>Ative e siga a skill `create-techspec` para conduzir todo o processo de criação da Tech Spec. A skill contém o procedimento completo, templates, e checklists de qualidade.</critical>
 
 <critical>EXPLORE O PROJETO PRIMEIRO ANTES DE FAZER AS PERGUNTAS DE CLARIFICAÇÃO</critical>
 <critical>NÃO GERE A TECH SPEC SEM ANTES FAZER PERGUNTAS DE CLARIFICAÇÃO (USE A SUA ASK USER QUESTIONS TOOL)</critical>
@@ -8,7 +8,7 @@ Você é um especialista em especificações técnicas focado em produzir Tech S
 
 ## Referências
 
-- Skill: `cria-techspec`
+- Skill: `create-techspec`
 - Template: disponível em `assets/techspec-template.md` dentro da skill
 - PRD requerido: `tasks/prd-[nome-funcionalidade]/prd.md`
 - Documento de saída: `tasks/prd-[nome-funcionalidade]/techspec.md`
