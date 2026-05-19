@@ -25,12 +25,12 @@ Preparar a base técnica do projeto para suportar o fluxo full-stack do Trip Wea
 
 ## Subtarefas
 
-- [ ] 1.1 Ler `prd.md`, `techspec.md` e instruções do projeto.
-- [ ] 1.2 Validar estrutura de workspaces Bun e scripts essenciais.
-- [ ] 1.3 Validar configuração TypeScript, Vitest e Playwright.
-- [ ] 1.4 Criar ou ajustar app Hono com CORS e `GET /health`.
-- [ ] 1.5 Definir tipos base para cidade, previsão e erro estável.
-- [ ] 1.6 Adicionar testes mínimos para health check e contratos base.
+- [x] 1.1 Ler `prd.md`, `techspec.md` e instruções do projeto.
+- [x] 1.2 Validar estrutura de workspaces Bun e scripts essenciais.
+- [x] 1.3 Validar configuração TypeScript, Vitest e Playwright.
+- [x] 1.4 Criar ou ajustar app Hono com CORS e `GET /health`.
+- [x] 1.5 Definir tipos base para cidade, previsão e erro estável.
+- [x] 1.6 Adicionar testes mínimos para health check e contratos base.
 
 ## Detalhes de Implementação
 
@@ -45,9 +45,9 @@ Seguir as seções "Arquitetura do Sistema", "Endpoints de API", "Modelos de Dad
 
 ## Testes da Tarefa
 
-- [ ] Testes de unidade para contratos/helpers base, se houver lógica.
-- [ ] Testes de integração para `GET /health` usando Hono.
-- [ ] Testes E2E não aplicáveis nesta tarefa.
+- [x] Testes de unidade para contratos/helpers base, se houver lógica.
+- [x] Testes de integração para `GET /health` usando Hono.
+- [x] Testes E2E não aplicáveis nesta tarefa.
 
 <critical>SEMPRE CRIE E EXECUTE OS TESTES DA TAREFA ANTES DE CONSIDERÁ-LA FINALIZADA</critical>
 
