@@ -61,7 +61,7 @@ bun run test             # Vitest
 | Tech Spec         | Especificação técnica               | `create-techspec`                                                       |
 | Tasks             | Planejamento de tarefas             | `create-tasks`                                                         |
 | Implementação     | Execução de tarefas                 | `execute-task`                                                       |
-| Code Review       | Revisão de código                   | `executar-review`, `task-review`                                      |
+| Code Review       | Revisão de código                   | `execute-review`, `task-review`                                      |
 | QA                | Quality Assurance                   | `executar-qa`                                                         |
 | Bugfix            | Correção de bugs                    | `executar-bugfix`                                                     |
 
