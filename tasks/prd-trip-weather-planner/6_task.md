@@ -28,13 +28,13 @@ Implementar a suíte Playwright que comprova os fluxos principais do produto com
 
 ## Subtarefas
 
-- [ ] 6.1 Configurar Playwright para subir frontend e backend.
-- [ ] 6.2 Criar fixtures/mocks para cidades e previsão.
-- [ ] 6.3 Implementar E2E do fluxo feliz busca -> detalhes -> previsão.
-- [ ] 6.4 Implementar E2E de vazio, falha na busca e falha na previsão.
-- [ ] 6.5 Implementar E2E de recentes, limpar recentes e favoritos.
-- [ ] 6.6 Implementar E2E de deep link e viewport mobile.
-- [ ] 6.7 Implementar E2E real obrigatório contra backend e Open-Meteo.
+- [x] 6.1 Configurar Playwright para subir frontend e backend.
+- [x] 6.2 Criar fixtures/mocks para cidades e previsão.
+- [x] 6.3 Implementar E2E do fluxo feliz busca -> detalhes -> previsão.
+- [x] 6.4 Implementar E2E de vazio, falha na busca e falha na previsão.
+- [x] 6.5 Implementar E2E de recentes, limpar recentes e favoritos.
+- [x] 6.6 Implementar E2E de deep link e viewport mobile.
+- [x] 6.7 Implementar E2E real obrigatório contra backend e Open-Meteo.
 
 ## Detalhes de Implementação
 
@@ -49,9 +49,9 @@ Seguir as seções "Validação por testes", "Abordagem de Testes" e "Riscos Con
 
 ## Testes da Tarefa
 
-- [ ] Testes de unidade não aplicáveis nesta tarefa.
-- [ ] Testes de integração não aplicáveis nesta tarefa.
-- [ ] Testes E2E com mocks e um cenário real obrigatório.
+- [x] Testes de unidade não aplicáveis nesta tarefa.
+- [x] Testes de integração não aplicáveis nesta tarefa.
+- [x] Testes E2E com mocks e um cenário real obrigatório.
 
 <critical>SEMPRE CRIE E EXECUTE OS TESTES DA TAREFA ANTES DE CONSIDERÁ-LA FINALIZADA</critical>
 

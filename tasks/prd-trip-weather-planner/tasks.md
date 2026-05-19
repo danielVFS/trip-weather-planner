@@ -7,5 +7,5 @@
 - [x] 3.0 Cliente frontend e persistência local
 - [x] 4.0 Página inicial de busca
 - [x] 5.0 Página de detalhes da cidade
-- [ ] 6.0 Cobertura E2E
+- [x] 6.0 Cobertura E2E
 - [ ] 7.0 Validação final
