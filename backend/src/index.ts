@@ -1,6 +1,8 @@
 import { Hono } from "hono"
 import { cors } from "hono/cors"
 
+import { citiesRoutes } from "./routes/cities"
+import { weatherRoutes } from "./routes/weather"
 import type { HealthResponse } from "./types/weather"
 
 export const app = new Hono()
@@ -21,6 +23,9 @@ app.get("/health", (c) => {
 
   return c.json(response)
 })
+
+app.route("/api/cities", citiesRoutes)
+app.route("/api/weather", weatherRoutes)
 
 if (import.meta.main) {
   Bun.serve({

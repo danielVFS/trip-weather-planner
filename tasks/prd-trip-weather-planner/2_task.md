@@ -25,13 +25,13 @@ Implementar a camada backend que isola o frontend da Open-Meteo, expondo endpoin
 
 ## Subtarefas
 
-- [ ] 2.1 Implementar cliente/serviço Open-Meteo.
-- [ ] 2.2 Implementar normalização de cidades.
-- [ ] 2.3 Implementar normalização de previsão e mapeamento WMO.
-- [ ] 2.4 Implementar rota `GET /api/cities/search`.
-- [ ] 2.5 Implementar rota `GET /api/weather/forecast`.
-- [ ] 2.6 Adicionar testes unitários de normalização, validação e WMO.
-- [ ] 2.7 Adicionar testes de integração das rotas com mocks de `fetch`.
+- [x] 2.1 Implementar cliente/serviço Open-Meteo.
+- [x] 2.2 Implementar normalização de cidades.
+- [x] 2.3 Implementar normalização de previsão e mapeamento WMO.
+- [x] 2.4 Implementar rota `GET /api/cities/search`.
+- [x] 2.5 Implementar rota `GET /api/weather/forecast`.
+- [x] 2.6 Adicionar testes unitários de normalização, validação e WMO.
+- [x] 2.7 Adicionar testes de integração das rotas com mocks de `fetch`.
 
 ## Detalhes de Implementação
 
@@ -46,9 +46,9 @@ Seguir as seções "Interfaces Principais", "Modelos de Dados", "Endpoints de AP
 
 ## Testes da Tarefa
 
-- [ ] Testes de unidade para validação, normalização, WMO e erros.
-- [ ] Testes de integração para `/api/cities/search` e `/api/weather/forecast`.
-- [ ] Testes E2E não aplicáveis nesta tarefa.
+- [x] Testes de unidade para validação, normalização, WMO e erros.
+- [x] Testes de integração para `/api/cities/search` e `/api/weather/forecast`.
+- [x] Testes E2E não aplicáveis nesta tarefa.
 
 <critical>SEMPRE CRIE E EXECUTE OS TESTES DA TAREFA ANTES DE CONSIDERÁ-LA FINALIZADA</critical>
 

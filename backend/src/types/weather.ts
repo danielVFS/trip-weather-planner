@@ -43,3 +43,7 @@ export type HealthResponse = {
   status: "ok"
   service: "trip-weather-planner-backend"
 }
+
+export type CitySearchResponse = {
+  results: CityResult[]
+}
