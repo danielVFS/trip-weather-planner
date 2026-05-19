@@ -5,6 +5,23 @@ description: Implements feature tasks by loading required skills, reading PRD/Te
 
 # Task Execution
 
+## Command Instructions
+
+You are an AI assistant responsible for implementing tasks correctly.
+
+<critical>Identify and load the skills required to execute the task based on the technologies used</critical>
+<critical>**YOU MUST** start implementation immediately after planning.</critical>
+<critical>Use Context7 MCP to analyze documentation for the language, frameworks, and libraries involved in the implementation</critical>
+<critical>After completing the task, mark it as complete in tasks.md</critical>
+<critical>ALWAYS EXECUTE @task-reviewer at the end</critical>
+
+## References
+
+- Skill: `execute-task`
+- PRD: `./tasks/prd-[feature-slug]/prd.md`
+- Tech Spec: `./tasks/prd-[feature-slug]/techspec.md`
+- Tasks: `./tasks/prd-[feature-slug]/tasks.md`
+
 ## Procedures
 
 **Step 1: Pre-Task Configuration (Mandatory)**
@@ -18,7 +35,7 @@ description: Implements feature tasks by loading required skills, reading PRD/Te
 **Step 2: Load Required Skills**
 
 1. Identify the technologies involved in the task (React, Hono, shadcn, etc.).
-2. Load the corresponding skills from `.claude/skills/` based on technologies used.
+2. Load the corresponding skills from `.agents/skills/` based on technologies used.
 3. Use Context7 MCP to analyze documentation of involved languages, frameworks, and libraries.
 
 **Step 3: Task Analysis (Mandatory)**

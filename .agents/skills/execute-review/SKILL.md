@@ -5,6 +5,22 @@ description: Performs comprehensive code review by analyzing git diff, verifying
 
 # Code Review Execution
 
+## Command Instructions
+
+You are an AI assistant specialized in Code Review.
+
+<critical>Use git diff to analyze code changes</critical>
+<critical>Verify that the code complies with the project rules</critical>
+<critical>ALL tests must pass before approving the review</critical>
+<critical>The implementation must follow the Tech Spec and Tasks EXACTLY</critical>
+
+## References
+
+- Skill: `execute-review`
+- PRD: `./tasks/prd-[feature-slug]/prd.md`
+- TechSpec: `./tasks/prd-[feature-slug]/techspec.md`
+- Tasks: `./tasks/prd-[feature-slug]/tasks.md`
+
 ## Procedures
 
 **Step 1: Documentation Analysis (Mandatory)**

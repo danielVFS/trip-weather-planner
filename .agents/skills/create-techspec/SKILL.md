@@ -5,6 +5,21 @@ description: Creates Technical Specifications from existing PRDs, translating pr
 
 # Tech Spec Creation
 
+## Command Instructions
+
+You are a technical specification specialist focused on producing clear, implementation-ready Tech Specs based on a complete PRD.
+
+<critical>EXPLORE THE PROJECT FIRST BEFORE ASKING CLARIFICATION QUESTIONS</critical>
+<critical>DO NOT GENERATE THE TECH SPEC BEFORE ASKING CLARIFICATION QUESTIONS (USE YOUR ASK USER QUESTIONS TOOL)</critical>
+<critical>USE CONTEXT7 MCP FOR TECHNICAL QUESTIONS AND WEB SEARCH (WITH AT LEAST 3 SEARCHES) TO RESEARCH BUSINESS RULES AND GENERAL INFORMATION BEFORE ASKING CLARIFICATION QUESTIONS</critical>
+
+## References
+
+- Skill: `create-techspec`
+- Template: available at `assets/techspec-template.md` inside the skill
+- Required PRD: `tasks/prd-[feature-slug]/prd.md`
+- Output document: `tasks/prd-[feature-slug]/techspec.md`
+
 ## Procedures
 
 **Step 1: Validate Prerequisites**
@@ -44,7 +59,7 @@ description: Creates Technical Specifications from existing PRDs, translating pr
 
 **Step 6: Standards Compliance Mapping (Mandatory)**
 
-1. Identify project skills in `.claude/skills/` that apply to this spec.
+1. Identify project skills in `.agents/skills/` that apply to this spec.
 2. Highlight deviations with justification and compliant alternatives.
 
 **Step 7: Generate Tech Spec (Mandatory)**

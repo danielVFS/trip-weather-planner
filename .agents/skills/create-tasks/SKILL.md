@@ -5,6 +5,23 @@ description: Converts PRD and Tech Spec into a detailed, sequenced list of imple
 
 # Task Creation
 
+## Command Instructions
+
+You are an assistant specialized in software development project management. Your task is to create a detailed task list based on a PRD and a Tech Spec.
+
+<critical>**BEFORE GENERATING ANY FILE, SHOW ME THE HIGH-LEVEL TASK LIST FOR APPROVAL**</critical>
+<critical>DO NOT IMPLEMENT ANYTHING</critical>
+<critical>EACH TASK MUST BE A FUNCTIONAL AND INCREMENTAL DELIVERABLE</critical>
+<critical>IT IS ESSENTIAL THAT EACH TASK HAS A TEST SUITE THAT GUARANTEES ITS FUNCTIONALITY AND BUSINESS OBJECTIVE</critical>
+
+## References
+
+- Skill: `create-tasks`
+- Templates: available in `assets/` inside the skill
+- Required PRD: `tasks/prd-[feature-slug]/prd.md`
+- Required Tech Spec: `tasks/prd-[feature-slug]/techspec.md`
+- Output: `./tasks/prd-[feature-slug]/tasks.md` and `./tasks/prd-[feature-slug]/[num]_task.md`
+
 ## Procedures
 
 **Step 1: Validate Prerequisites**

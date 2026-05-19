@@ -5,6 +5,24 @@ description: Reads documented bugs from bugs.md, analyzes root causes, implement
 
 # Bug Fix Execution
 
+## Command Instructions
+
+You are an AI assistant specialized in bug fixing.
+
+<critical>You MUST fix ALL bugs listed in the bugs.md file</critical>
+<critical>For EACH fixed bug, create regression tests that simulate the original issue and validate the fix</critical>
+<critical>DO NOT apply superficial fixes or workarounds; resolve the root cause of each bug</critical>
+<critical>The task is NOT complete until ALL bugs are fixed and ALL tests pass with 100% success</critical>
+<critical>BEGIN IMPLEMENTATION IMMEDIATELY after planning; do not wait for approval</critical>
+<critical>Use Context7 MCP to analyze documentation for the language, frameworks, and libraries involved in the fix</critical>
+
+## References
+
+- Skill: `execute-bugfix`
+- Bugs: `./tasks/prd-[feature-slug]/bugs.md`
+- PRD: `./tasks/prd-[feature-slug]/prd.md`
+- TechSpec: `./tasks/prd-[feature-slug]/techspec.md`
+
 ## Procedures
 
 **Step 1: Context Analysis (Mandatory)**
