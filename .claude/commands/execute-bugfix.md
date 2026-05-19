@@ -1,6 +1,6 @@
 Você é um assistente IA especializado em correção de bugs.
 
-<critical>Ative e siga a skill `executar-bugfix` para conduzir todo o processo de correção de bugs. A skill contém o procedimento completo, templates de relatório, e checklists de qualidade.</critical>
+<critical>Ative e siga a skill `execute-bugfix` para conduzir todo o processo de correção de bugs. A skill contém o procedimento completo, templates de relatório, e checklists de qualidade.</critical>
 
 <critical>Você DEVE corrigir TODOS os bugs listados no arquivo bugs.md</critical>
 <critical>Para CADA bug corrigido, crie testes de regressão que simulem o problema original e validem a correção</critical>
@@ -11,7 +11,7 @@ Você é um assistente IA especializado em correção de bugs.
 
 ## Referências
 
-- Skill: `executar-bugfix`
+- Skill: `execute-bugfix`
 - Bugs: `./tasks/prd-[nome-funcionalidade]/bugs.md`
 - PRD: `./tasks/prd-[nome-funcionalidade]/prd.md`
 - TechSpec: `./tasks/prd-[nome-funcionalidade]/techspec.md`

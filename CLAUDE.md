@@ -63,7 +63,7 @@ bun run test             # Vitest
 | Implementação     | Execução de tarefas                 | `execute-task`                                                       |
 | Code Review       | Revisão de código                   | `execute-review`, `task-review`                                      |
 | QA                | Quality Assurance                   | `execute-qa`                                                         |
-| Bugfix            | Correção de bugs                    | `executar-bugfix`                                                     |
+| Bugfix            | Correção de bugs                    | `execute-bugfix`                                                     |
 
 ### Estrutura do projeto
 
