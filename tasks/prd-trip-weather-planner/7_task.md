@@ -30,13 +30,13 @@ Executar a validação final da implementação completa, corrigindo falhas de c
 
 ## Subtarefas
 
-- [ ] 7.1 Rodar lint e corrigir problemas.
-- [ ] 7.2 Rodar typecheck e corrigir problemas.
-- [ ] 7.3 Rodar build e corrigir problemas.
-- [ ] 7.4 Rodar testes unitários e corrigir problemas.
-- [ ] 7.5 Rodar testes E2E e corrigir problemas.
-- [ ] 7.6 Revisar aderência ao PRD e Tech Spec.
-- [ ] 7.7 Registrar resultado final dos checks.
+- [x] 7.1 Rodar lint e corrigir problemas.
+- [x] 7.2 Rodar typecheck e corrigir problemas.
+- [x] 7.3 Rodar build e corrigir problemas.
+- [x] 7.4 Rodar testes unitários e corrigir problemas.
+- [x] 7.5 Rodar testes E2E e corrigir problemas.
+- [x] 7.6 Revisar aderência ao PRD e Tech Spec.
+- [x] 7.7 Registrar resultado final dos checks.
 
 ## Detalhes de Implementação
 
@@ -51,9 +51,9 @@ Seguir as seções "Objetivos", "Restrições Técnicas de Alto Nível", "Sequen
 
 ## Testes da Tarefa
 
-- [ ] Testes de unidade via `bun run test`.
-- [ ] Testes de integração via `bun run test`.
-- [ ] Testes E2E via `bun run test:e2e`.
+- [x] Testes de unidade via `bun run test`.
+- [x] Testes de integração via `bun run test`.
+- [x] Testes E2E via `bun run test:e2e`.
 
 <critical>SEMPRE CRIE E EXECUTE OS TESTES DA TAREFA ANTES DE CONSIDERÁ-LA FINALIZADA</critical>
 
@@ -65,3 +65,13 @@ Seguir as seções "Objetivos", "Restrições Técnicas de Alto Nível", "Sequen
 - `tasks/prd-trip-weather-planner/prd.md`
 - `tasks/prd-trip-weather-planner/techspec.md`
 - `tasks/prd-trip-weather-planner/tasks.md`
+
+## Resultado Final
+
+- `bun run lint`: passou após adicionar o script raiz que delega para `frontend`.
+- `bun run typecheck`: passou.
+- `bun run build`: passou.
+- `bun run test`: passou com 5 arquivos e 42 testes.
+- `bun run test:e2e`: passou com 17 testes executados e 1 skip esperado do cenário real no projeto mobile; o cenário real executou em Chromium contra backend local e Open-Meteo.
+- Aderência PRD/Tech Spec: frontend consome apenas o backend local via `frontend/src/services/api.ts`; backend isola Open-Meteo em `backend/src/services/open-meteo.ts`; cobertura E2E inclui fluxos mockados, mobile e cenário real obrigatório.
+- Riscos residuais: o E2E real depende de rede e disponibilidade da Open-Meteo; avisos `NO_COLOR`/`FORCE_COLOR` apareceram no Playwright, mas não impactaram o resultado dos testes.

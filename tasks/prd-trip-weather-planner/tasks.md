@@ -8,4 +8,4 @@
 - [x] 4.0 Página inicial de busca
 - [x] 5.0 Página de detalhes da cidade
 - [x] 6.0 Cobertura E2E
-- [ ] 7.0 Validação final
+- [x] 7.0 Validação final
