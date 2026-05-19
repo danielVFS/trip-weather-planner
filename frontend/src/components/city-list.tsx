@@ -33,6 +33,7 @@ export function CityList({ cities, onSelectCity, testId }: CityListProps) {
 
 function cityDetailsHref(city: CityResult): string {
   const params = new URLSearchParams({
+    id: String(city.id),
     lat: String(city.latitude),
     lon: String(city.longitude),
     name: city.name,

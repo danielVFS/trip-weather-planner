@@ -30,13 +30,13 @@ Implementar a página que exibe a previsão para uma cidade por latitude e longi
 
 ## Subtarefas
 
-- [ ] 5.1 Implementar rota e leitura dos parâmetros de detalhes.
-- [ ] 5.2 Implementar carregamento da previsão via cliente API.
-- [ ] 5.3 Renderizar resumo atual ou do dia.
-- [ ] 5.4 Renderizar lista de próximos dias.
-- [ ] 5.5 Implementar estados de loading, erro e dados indisponíveis.
-- [ ] 5.6 Integrar favoritos com `use-local-cities`.
-- [ ] 5.7 Adicionar testes de deep link, previsão, erro e favoritos.
+- [x] 5.1 Implementar rota e leitura dos parâmetros de detalhes.
+- [x] 5.2 Implementar carregamento da previsão via cliente API.
+- [x] 5.3 Renderizar resumo atual ou do dia.
+- [x] 5.4 Renderizar lista de próximos dias.
+- [x] 5.5 Implementar estados de loading, erro e dados indisponíveis.
+- [x] 5.6 Integrar favoritos com `use-local-cities`.
+- [x] 5.7 Adicionar testes de deep link, previsão, erro e favoritos.
 
 ## Detalhes de Implementação
 
@@ -51,9 +51,9 @@ Seguir as seções "Detalhes e previsão da cidade", "Modelos de Dados", "Experi
 
 ## Testes da Tarefa
 
-- [ ] Testes de unidade para helpers locais, se houver.
-- [ ] Testes de integração com Testing Library para carregamento, previsão, erros e favoritos.
-- [ ] Testes E2E serão consolidados na tarefa 6.0.
+- [x] Testes de unidade para helpers locais, se houver.
+- [x] Testes de integração com Testing Library para carregamento, previsão, erros e favoritos.
+- [x] Testes E2E serão consolidados na tarefa 6.0.
 
 <critical>SEMPRE CRIE E EXECUTE OS TESTES DA TAREFA ANTES DE CONSIDERÁ-LA FINALIZADA</critical>
 

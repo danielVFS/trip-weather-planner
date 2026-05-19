@@ -65,7 +65,7 @@ describe("HomePage", () => {
     expect(within(results).getByRole("link", { name: /Rio de Janeiro/ }))
       .toHaveAttribute(
         "href",
-        "/city?lat=-22.9068&lon=-43.1729&name=Rio+de+Janeiro&country=Brasil&region=Rio+de+Janeiro&timezone=America%2FSao_Paulo",
+        "/city?id=3451190&lat=-22.9068&lon=-43.1729&name=Rio+de+Janeiro&country=Brasil&region=Rio+de+Janeiro&timezone=America%2FSao_Paulo",
       )
     expect(within(results).getByText("Rio de Janeiro, Brasil")).toBeVisible()
     expect(within(results).getByText("-22,91 lat, -43,17 lon")).toBeVisible()
