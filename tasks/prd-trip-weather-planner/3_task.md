@@ -25,13 +25,13 @@ Criar a base de dados do frontend: cliente HTTP tipado para o backend local e pe
 
 ## Subtarefas
 
-- [ ] 3.1 Criar tipos frontend compatíveis com os contratos do backend.
-- [ ] 3.2 Implementar cliente API para busca de cidades.
-- [ ] 3.3 Implementar cliente API para previsão.
-- [ ] 3.4 Implementar tratamento consistente de erro HTTP/rede.
-- [ ] 3.5 Implementar hook `use-local-cities`.
-- [ ] 3.6 Adicionar testes unitários do cliente API com mocks de `fetch`.
-- [ ] 3.7 Adicionar testes unitários do hook com `localStorage`.
+- [x] 3.1 Criar tipos frontend compatíveis com os contratos do backend.
+- [x] 3.2 Implementar cliente API para busca de cidades.
+- [x] 3.3 Implementar cliente API para previsão.
+- [x] 3.4 Implementar tratamento consistente de erro HTTP/rede.
+- [x] 3.5 Implementar hook `use-local-cities`.
+- [x] 3.6 Adicionar testes unitários do cliente API com mocks de `fetch`.
+- [x] 3.7 Adicionar testes unitários do hook com `localStorage`.
 
 ## Detalhes de Implementação
 
@@ -46,8 +46,8 @@ Seguir as seções "Modelos de Dados", "Pontos de Integração" e "Abordagem de 
 
 ## Testes da Tarefa
 
-- [ ] Testes de unidade para cliente API.
-- [ ] Testes de unidade para hook de persistência.
+- [x] Testes de unidade para cliente API.
+- [x] Testes de unidade para hook de persistência.
 - [ ] Testes de integração com componentes mínimos, se necessário.
 - [ ] Testes E2E não aplicáveis nesta tarefa.
 
