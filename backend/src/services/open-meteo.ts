@@ -211,7 +211,7 @@ function normalizeCurrentForecast(
   const code = numberField(current.weather_code)
 
   return {
-    date: optionalStringField(current.time) ?? fallbackDay.date,
+    date: dateOnlyField(optionalStringField(current.time) ?? fallbackDay.date),
     minTemperatureC: fallbackDay.minTemperatureC,
     maxTemperatureC: numberField(current.temperature_2m),
     precipitationMm: numberField(current.precipitation),
@@ -224,6 +224,16 @@ function normalizeCurrentForecast(
     weatherCode: code,
     weatherDescription: weatherDescriptionFromCode(code),
   }
+}
+
+function dateOnlyField(value: string): string {
+  const date = value.slice(0, 10)
+
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    throw invalidExternalResponse()
+  }
+
+  return date
 }
 
 function arrayField(value: unknown): unknown[] {

@@ -126,7 +126,7 @@ describe("weather contracts and normalization", () => {
       longitude: -43.125,
       timezone: "America/Sao_Paulo",
       current: {
-        date: "2026-05-19T10:15",
+        date: "2026-05-19",
         minTemperatureC: 19,
         maxTemperatureC: 25.2,
         precipitationMm: 0.2,

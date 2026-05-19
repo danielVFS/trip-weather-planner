@@ -160,7 +160,14 @@ function Metric({ label, value }: { label: string; value: string }) {
 }
 
 function formatDate(date: string): string {
-  return dateFormatter.format(new Date(`${date}T12:00:00`))
+  const dateOnly = date.split("T")[0]
+  const parsedDate = new Date(`${dateOnly}T12:00:00`)
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    return "Data indisponivel"
+  }
+
+  return dateFormatter.format(parsedDate)
 }
 
 function formatTemperature(value: number): string {

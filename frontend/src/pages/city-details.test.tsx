@@ -39,7 +39,7 @@ const forecast: WeatherForecast = {
   longitude: -43.1729,
   timezone: "America/Sao_Paulo",
   current: {
-    date: "2026-05-19",
+    date: "2026-05-19T10:15",
     minTemperatureC: 20,
     maxTemperatureC: 28,
     precipitationMm: 1.2,
