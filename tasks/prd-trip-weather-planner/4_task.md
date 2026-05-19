@@ -29,13 +29,13 @@ Implementar a página inicial onde o usuário pesquisa cidades, compara resultad
 
 ## Subtarefas
 
-- [ ] 4.1 Criar página `home` com estrutura semântica e responsiva.
-- [ ] 4.2 Implementar formulário de busca e chamada ao cliente API.
-- [ ] 4.3 Implementar estados de loading, erro e vazio.
-- [ ] 4.4 Implementar lista de resultados comparável.
-- [ ] 4.5 Integrar recentes com `use-local-cities`.
-- [ ] 4.6 Implementar navegação para detalhes com parâmetros necessários.
-- [ ] 4.7 Adicionar testes de interação da busca, estados e recentes.
+- [x] 4.1 Criar página `home` com estrutura semântica e responsiva.
+- [x] 4.2 Implementar formulário de busca e chamada ao cliente API.
+- [x] 4.3 Implementar estados de loading, erro e vazio.
+- [x] 4.4 Implementar lista de resultados comparável.
+- [x] 4.5 Integrar recentes com `use-local-cities`.
+- [x] 4.6 Implementar navegação para detalhes com parâmetros necessários.
+- [x] 4.7 Adicionar testes de interação da busca, estados e recentes.
 
 ## Detalhes de Implementação
 
@@ -50,9 +50,9 @@ Seguir as seções "Busca de cidade", "Experiência do Usuário", "Arquitetura d
 
 ## Testes da Tarefa
 
-- [ ] Testes de unidade para helpers locais, se houver.
-- [ ] Testes de integração com Testing Library para busca, estados e recentes.
-- [ ] Testes E2E serão consolidados na tarefa 6.0.
+- [x] Testes de unidade para helpers locais, se houver.
+- [x] Testes de integração com Testing Library para busca, estados e recentes.
+- [x] Testes E2E serão consolidados na tarefa 6.0.
 
 <critical>SEMPRE CRIE E EXECUTE OS TESTES DA TAREFA ANTES DE CONSIDERÁ-LA FINALIZADA</critical>
 
