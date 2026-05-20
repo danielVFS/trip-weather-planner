@@ -24,31 +24,34 @@ export function CityList({
     <ul className="city-list" data-testid={testId}>
       {cities.map((city) => {
         const favorite = favorites.some((item) => item.id === city.id)
+        const recent = isRecentCity(city)
 
         return (
           <li key={city.id}>
             <a
-              className="city-card"
+              className={recent ? "city-card recent-city-card" : "city-card"}
               href={cityDetailsHref(city)}
               onClick={() => onSelectCity(city)}
             >
-              <span className="city-card-header">
-                <span className="city-name">{city.name}</span>
-                {favorite ? (
-                  <span
-                    aria-hidden="true"
-                    className="favorite-badge"
-                    data-testid={`favorite-star-${city.id}`}
-                  >
-                    ★
-                  </span>
-                ) : null}
+              <span className="city-main">
+                <span className="city-card-header">
+                  <span className="city-name">{city.name}</span>
+                  {favorite ? (
+                    <span
+                      aria-hidden="true"
+                      className="favorite-badge"
+                      data-testid={`favorite-star-${city.id}`}
+                    >
+                      ★
+                    </span>
+                  ) : null}
+                </span>
+                <span className="city-meta">{locationLabel(city)}</span>
+                <span className="city-coordinates">
+                  {formatCoordinateLabel(city.latitude, city.longitude)}
+                </span>
               </span>
-              <span className="city-meta">{locationLabel(city)}</span>
-              {isRecentCity(city) ? <RecentDetails city={city} /> : null}
-              <span className="city-coordinates">
-                {formatCoordinateLabel(city.latitude, city.longitude)}
-              </span>
+              {recent ? <RecentDetails city={city} /> : null}
             </a>
           </li>
         )

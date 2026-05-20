@@ -17,11 +17,24 @@ const temperatureFormatter = new Intl.NumberFormat("pt-BR", {
 export function RecentDetails({ city }: RecentDetailsProps) {
   return (
     <span className="recent-details">
-      <span>Busca: {formatDate(city.searchedAt)}</span>
+      <span className="recent-date">
+        <span className="recent-label">Última vez buscado</span>{" "}
+        <span className="recent-value">{formatDate(city.searchedAt)}</span>
+      </span>
       {city.weatherSnapshot ? (
-        <span>
-          Min {formatTemperature(city.weatherSnapshot.minTemperatureC)} · Max{" "}
-          {formatTemperature(city.weatherSnapshot.maxTemperatureC)}
+        <span className="recent-temperature-row">
+          <span className="recent-temperature-pill">
+            <span className="recent-label">Min</span>{" "}
+            <span className="recent-value">
+              {formatTemperature(city.weatherSnapshot.minTemperatureC)}
+            </span>
+          </span>
+          <span className="recent-temperature-pill">
+            <span className="recent-label">Max</span>{" "}
+            <span className="recent-value">
+              {formatTemperature(city.weatherSnapshot.maxTemperatureC)}
+            </span>
+          </span>
         </span>
       ) : null}
     </span>
