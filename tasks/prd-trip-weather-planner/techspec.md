@@ -45,11 +45,13 @@ type WeatherService = {
 
 ```ts
 type LocalCitiesStore = {
-  recent: CityResult[]
+  recent: RecentCity[]
   favorites: CityResult[]
   addRecent(city: CityResult): void
+  updateRecentWeather(city: CityResult, snapshot: RecentWeatherSnapshot): void
   clearRecent(): void
   toggleFavorite(city: CityResult): void
+  isFavorite(city: CityResult): boolean
 }
 ```
 
@@ -64,6 +66,17 @@ type CityResult = {
   latitude: number
   longitude: number
   timezone?: string
+}
+
+type RecentWeatherSnapshot = {
+  forecastDate: string
+  minTemperatureC: number
+  maxTemperatureC: number
+}
+
+type RecentCity = CityResult & {
+  searchedAt: string
+  weatherSnapshot?: RecentWeatherSnapshot
 }
 
 type ForecastDay = {
@@ -86,7 +99,7 @@ type WeatherForecast = {
 }
 ```
 
-Sem esquema de banco: recentes e favoritos ficam apenas no `localStorage`, com chaves versionadas, por exemplo `trip-weather-planner:recent:v1` e `trip-weather-planner:favorites:v1`.
+Sem esquema de banco: recentes e favoritos ficam apenas no `localStorage`, com chaves versionadas, por exemplo `trip-weather-planner:recent:v1` e `trip-weather-planner:favorites:v1`. Recentes devem aceitar dados legados sem metadata e, ao salvar uma nova selecao, registrar `searchedAt`; quando uma previsao for carregada para a cidade recente, armazenar `weatherSnapshot` com data da previsao, minima e maxima. Favoritos continuam como `CityResult[]`, e a UI deve derivar o indicador visual de estrela comparando o destino com a lista persistida.
 
 ### Endpoints de API
 
@@ -109,7 +122,7 @@ O backend deve impor timeout via `AbortController`, validar shape mínimo da res
 ### Testes Unidade
 
 - Backend: validação de query params, normalização de cidades, normalização de forecast, mapeamento de códigos WMO e erros Open-Meteo.
-- Frontend: hooks de `localStorage`, cliente API, renderização de loading/error/empty/success e toggles de favorito.
+- Frontend: hooks de `localStorage`, cliente API, renderização de loading/error/empty/success, metadata de recentes e toggles/indicadores de favorito.
 - Mocks apenas para `fetch` externo e armazenamento local.
 
 ### Testes de Integração
