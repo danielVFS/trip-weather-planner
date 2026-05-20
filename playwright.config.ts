@@ -9,6 +9,7 @@ export default defineConfig({
   reporter: "list",
   use: {
     baseURL: "http://localhost:5173",
+    headless: !!process.env.CI,
     trace: "on-first-retry",
   },
   projects: [
