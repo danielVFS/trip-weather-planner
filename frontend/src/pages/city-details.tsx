@@ -54,10 +54,19 @@ export function CityDetailsPage() {
           </a>
           {details ? (
             <button
-              className="primary-action"
+              className={
+                favorite ? "primary-action favorite-action" : "primary-action"
+              }
               onClick={toggleFavorite}
               type="button"
             >
+              <span
+                aria-hidden="true"
+                className="favorite-action-star"
+                data-testid="favorite-action-star"
+              >
+                ★
+              </span>
               {favorite ? "Remover favorito" : "Favoritar cidade"}
             </button>
           ) : null}

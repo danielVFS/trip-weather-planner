@@ -15,7 +15,7 @@ export function HomePage() {
   const [results, setResults] = useState<CityResult[]>([])
   const [searchState, setSearchState] = useState<SearchState>("idle")
   const [errorMessage, setErrorMessage] = useState("")
-  const { recent, addRecent, clearRecent } = useLocalCities()
+  const { recent, favorites, addRecent, clearRecent } = useLocalCities()
 
   const hasRecent = recent.length > 0
   const trimmedQuery = query.trim()
@@ -117,6 +117,7 @@ export function HomePage() {
         {searchState === "success" ? (
           <CityList
             cities={results}
+            favorites={favorites}
             onSelectCity={addRecent}
             testId="search-results"
           />
@@ -134,7 +135,12 @@ export function HomePage() {
         </div>
 
         {hasRecent ? (
-          <CityList cities={recent} onSelectCity={addRecent} testId="recent" />
+          <CityList
+            cities={recent}
+            favorites={favorites}
+            onSelectCity={addRecent}
+            testId="recent"
+          />
         ) : (
           <p className="state-message">
             As cidades selecionadas aparecem aqui para acesso rapido.

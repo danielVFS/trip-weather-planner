@@ -2,7 +2,10 @@ import { render, screen, waitFor, within } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 
-import { RECENT_CITIES_STORAGE_KEY } from "../hooks/use-local-cities"
+import {
+  FAVORITE_CITIES_STORAGE_KEY,
+  RECENT_CITIES_STORAGE_KEY,
+} from "../hooks/use-local-cities"
 import {
   ApiClientError,
   searchCities,
@@ -74,7 +77,13 @@ describe("HomePage", () => {
     await user.click(within(results).getByRole("link", { name: /Rio Grande/ }))
 
     await waitFor(() => {
-      expect(readRecent()).toEqual([rioGrande])
+      expect(readRecent()).toEqual([
+        expect.objectContaining({
+          id: rioGrande.id,
+          name: rioGrande.name,
+          searchedAt: expect.any(String) as string,
+        }),
+      ])
     })
     expect(screen.getByTestId("recent")).toHaveTextContent("Rio Grande")
   })
@@ -149,17 +158,56 @@ describe("HomePage", () => {
 
   it("exibe recentes persistidos e permite limpar a lista", async () => {
     const user = userEvent.setup()
-    localStorage.setItem(RECENT_CITIES_STORAGE_KEY, JSON.stringify([rio]))
+    localStorage.setItem(
+      RECENT_CITIES_STORAGE_KEY,
+      JSON.stringify([
+        {
+          ...rio,
+          searchedAt: "2026-05-20T12:00:00.000Z",
+          weatherSnapshot: {
+            forecastDate: "2026-05-20",
+            minTemperatureC: 20,
+            maxTemperatureC: 28,
+          },
+        },
+      ]),
+    )
 
     render(<HomePage />)
 
     expect(screen.getByTestId("recent")).toHaveTextContent("Rio de Janeiro")
+    expect(screen.getByTestId("recent")).toHaveTextContent("Busca: 20/05/2026")
+    expect(screen.getByTestId("recent")).toHaveTextContent("Min 20 °C")
+    expect(screen.getByTestId("recent")).toHaveTextContent("Max 28 °C")
 
     await user.click(screen.getByRole("button", { name: "Limpar recentes" }))
 
     expect(screen.queryByTestId("recent")).not.toBeInTheDocument()
     expect(readRecent()).toEqual([])
     expect(screen.getByText(/As cidades selecionadas/)).toBeVisible()
+  })
+
+  it("mostra estrela em cidades favoritas nos resultados e recentes", async () => {
+    vi.mocked(searchCities).mockResolvedValue([rio])
+    localStorage.setItem(FAVORITE_CITIES_STORAGE_KEY, JSON.stringify([rio]))
+    localStorage.setItem(
+      RECENT_CITIES_STORAGE_KEY,
+      JSON.stringify([{ ...rio, searchedAt: "2026-05-20T12:00:00.000Z" }]),
+    )
+
+    render(<HomePage />)
+
+    expect(screen.getByTestId(`favorite-star-${rio.id}`)).toBeVisible()
+
+    const user = userEvent.setup()
+
+    await user.type(screen.getByLabelText("Cidade"), "rio")
+    await user.click(screen.getByRole("button", { name: "Buscar" }))
+
+    const results = await screen.findByTestId("search-results")
+    expect(
+      within(results).getByTestId(`favorite-star-${rio.id}`),
+    ).toBeVisible()
   })
 })
 

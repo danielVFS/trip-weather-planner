@@ -4,6 +4,7 @@ import {
   ApiClientError,
   getForecast,
   type CityResult,
+  type ForecastDay,
   type WeatherForecast,
 } from "../services/api"
 import { useLocalCities } from "./use-local-cities"
@@ -43,7 +44,13 @@ export type CityDetailsPageData = {
 }
 
 export function useCityDetailsPageData(): CityDetailsPageData {
-  const { recent, favorites, toggleFavorite, isFavorite } = useLocalCities()
+  const {
+    recent,
+    favorites,
+    toggleFavorite,
+    updateRecentWeather,
+    isFavorite,
+  } = useLocalCities()
   const [forecastResult, setForecastResult] = useState<ForecastResult | null>(
     null,
   )
@@ -58,7 +65,12 @@ export function useCityDetailsPageData(): CityDetailsPageData {
   const currentResult =
     forecastResult?.requestKey === requestKey ? forecastResult : null
 
-  useForecastRequest(details, requestKey, setForecastResult)
+  useForecastRequest(
+    details,
+    requestKey,
+    setForecastResult,
+    updateRecentWeather,
+  )
 
   return {
     details,
@@ -78,10 +90,50 @@ function useForecastRequest(
   details: CityDetails | null,
   requestKey: string,
   setForecastResult: (result: ForecastResult) => void,
+  updateRecentWeather: (city: CityResult, snapshot: ForecastSnapshot) => void,
 ): void {
   const latitude = details?.latitude
   const longitude = details?.longitude
   const timezone = details?.timezone
+  const cityCountry = details?.city.country
+  const cityId = details?.city.id
+  const cityLatitude = details?.city.latitude
+  const cityLongitude = details?.city.longitude
+  const cityName = details?.city.name
+  const cityRegion = details?.city.region
+  const cityTimezone = details?.city.timezone
+  const city = useMemo(
+    () => {
+      if (
+        cityCountry === undefined ||
+        cityId === undefined ||
+        cityLatitude === undefined ||
+        cityLongitude === undefined ||
+        cityName === undefined
+      ) {
+        return null
+      }
+
+      return {
+        country: cityCountry,
+        id: cityId,
+        latitude: cityLatitude,
+        longitude: cityLongitude,
+        name: cityName,
+        region: cityRegion,
+        timezone: cityTimezone,
+      }
+    },
+    [
+      cityCountry,
+      cityId,
+      cityLatitude,
+      cityLongitude,
+      cityName,
+      cityRegion,
+      cityTimezone,
+    ],
+  )
 
   useEffect(() => {
     if (latitude === undefined || longitude === undefined) {
@@ -101,6 +153,9 @@ function useForecastRequest(
             ? { forecast: nextForecast, requestKey, state: "success" }
             : { requestKey, state: "empty" },
         )
+        if (hasUsableForecast(nextForecast) && city) {
+          updateRecentWeather(city, forecastSnapshot(nextForecast.current))
+        }
       })
       .catch((error: unknown) => {
         if (ignore) {
@@ -117,7 +172,21 @@ function useForecastRequest(
     return () => {
       ignore = true
     }
-  }, [latitude, longitude, requestKey, setForecastResult, timezone])
+  }, [
+    city,
+    latitude,
+    longitude,
+    requestKey,
+    setForecastResult,
+    timezone,
+    updateRecentWeather,
+  ])
+}
+
+type ForecastSnapshot = {
+  forecastDate: string
+  minTemperatureC: number
+  maxTemperatureC: number
 }
 
 function getForecastState(
@@ -201,6 +270,14 @@ function coordinateId(latitude: number, longitude: number): number {
 
 function hasUsableForecast(forecast: WeatherForecast): boolean {
   return Boolean(forecast.current && forecast.daily.length > 0)
+}
+
+function forecastSnapshot(day: ForecastDay): ForecastSnapshot {
+  return {
+    forecastDate: day.date,
+    minTemperatureC: day.minTemperatureC,
+    maxTemperatureC: day.maxTemperatureC,
+  }
 }
 
 function getForecastErrorMessage(error: unknown): string {

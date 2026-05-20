@@ -91,6 +91,9 @@ test("salva recentes e permite limpar a lista", async ({ page }) => {
   await page.getByRole("link", { name: "Voltar para busca" }).click()
 
   await expect(page.getByTestId("recent")).toContainText("Rio de Janeiro")
+  await expect(page.getByTestId("recent")).toContainText(/Busca: \d{2}\/\d{2}\/\d{4}/)
+  await expect(page.getByTestId("recent")).toContainText("Min 21 °C")
+  await expect(page.getByTestId("recent")).toContainText("Max 28 °C")
 
   await page.getByRole("button", { name: "Limpar recentes" }).click()
 
@@ -111,6 +114,7 @@ test("permite favoritar e remover favorito", async ({ page }) => {
   await expect(
     page.getByRole("button", { name: "Remover favorito" }),
   ).toBeVisible()
+  await expect(page.getByTestId("favorite-action-star")).toBeVisible()
 
   await page.reload()
   await expect(

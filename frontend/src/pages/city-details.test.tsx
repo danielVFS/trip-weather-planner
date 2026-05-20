@@ -195,12 +195,41 @@ describe("CityDetailsPage", () => {
     expect(
       screen.getByRole("button", { name: "Remover favorito" }),
     ).toBeVisible()
+    expect(screen.getByTestId("favorite-action-star")).toBeVisible()
 
     await user.click(screen.getByRole("button", { name: "Remover favorito" }))
     expect(readFavorites()).toEqual([])
     expect(
       screen.getByRole("button", { name: "Favoritar cidade" }),
     ).toBeVisible()
+  })
+
+  it("salva o snapshot da previsao na cidade recente", async () => {
+    localStorage.setItem(
+      RECENT_CITIES_STORAGE_KEY,
+      JSON.stringify([
+        { ...rio, searchedAt: "2026-05-20T12:00:00.000Z" },
+      ]),
+    )
+    window.history.replaceState({}, "", "/city?lat=-22.9068&lon=-43.1729")
+
+    render(<CityDetailsPage />)
+
+    await screen.findByText("Nublado")
+
+    await waitFor(() => {
+      expect(readRecent()).toEqual([
+        {
+          ...rio,
+          searchedAt: "2026-05-20T12:00:00.000Z",
+          weatherSnapshot: {
+            forecastDate: "2026-05-19T10:15",
+            minTemperatureC: 20,
+            maxTemperatureC: 28,
+          },
+        },
+      ])
+    })
   })
 
   it("oferece acao para voltar para busca", async () => {
@@ -218,4 +247,10 @@ function readFavorites(): CityResult[] {
   const value = localStorage.getItem(FAVORITE_CITIES_STORAGE_KEY)
 
   return value ? (JSON.parse(value) as CityResult[]) : []
+}
+
+function readRecent(): unknown[] {
+  const value = localStorage.getItem(RECENT_CITIES_STORAGE_KEY)
+
+  return value ? (JSON.parse(value) as unknown[]) : []
 }

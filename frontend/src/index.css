@@ -109,6 +109,20 @@ input:focus-visible {
   color: #ffffff;
 }
 
+.favorite-action {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.favorite-action-star {
+  color: #f2b84b;
+  font-size: 1.05em;
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(23, 32, 51, 0.24);
+}
+
 .primary-action:hover {
   background: var(--accent-strong);
   border-color: var(--accent-strong);
@@ -409,6 +423,13 @@ h2 {
     transform 160ms ease;
 }
 
+.city-card-header {
+  align-items: start;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
 .city-card:hover {
   border-color: rgba(47, 125, 109, 0.58);
   box-shadow: 0 14px 30px rgba(23, 32, 51, 0.08);
@@ -423,11 +444,28 @@ h2 {
   overflow-wrap: anywhere;
 }
 
+.favorite-badge {
+  color: #d99a00;
+  flex: 0 0 auto;
+  font-size: 1.1rem;
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(23, 32, 51, 0.16);
+}
+
 .city-meta,
-.city-coordinates {
+.city-coordinates,
+.recent-details {
   color: var(--ink-soft);
   line-height: 1.35;
   overflow-wrap: anywhere;
+}
+
+.recent-details {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  gap: 0.2rem;
 }
 
 .city-coordinates {

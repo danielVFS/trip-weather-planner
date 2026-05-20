@@ -1,5 +1,5 @@
 import { act, renderHook } from "@testing-library/react"
-import { beforeEach, describe, expect, it } from "vitest"
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 
 import type { CityResult } from "../services/api"
 import {
@@ -30,7 +30,13 @@ const saoPaulo: CityResult = {
 
 describe("useLocalCities", () => {
   beforeEach(() => {
+    vi.useFakeTimers()
+    vi.setSystemTime(new Date("2026-05-20T12:00:00.000Z"))
     localStorage.clear()
+  })
+
+  afterEach(() => {
+    vi.useRealTimers()
   })
 
   it("inicia vazio quando localStorage nao possui dados", () => {
@@ -59,8 +65,14 @@ describe("useLocalCities", () => {
       result.current.addRecent(rio)
     })
 
-    expect(result.current.recent).toEqual([rio, saoPaulo])
-    expect(readStored(RECENT_CITIES_STORAGE_KEY)).toEqual([rio, saoPaulo])
+    expect(result.current.recent).toEqual([
+      { ...rio, searchedAt: "2026-05-20T12:00:00.000Z" },
+      { ...saoPaulo, searchedAt: "2026-05-20T12:00:00.000Z" },
+    ])
+    expect(readStored(RECENT_CITIES_STORAGE_KEY)).toEqual([
+      { ...rio, searchedAt: "2026-05-20T12:00:00.000Z" },
+      { ...saoPaulo, searchedAt: "2026-05-20T12:00:00.000Z" },
+    ])
   })
 
   it("limita recentes a oito cidades", () => {
@@ -93,6 +105,31 @@ describe("useLocalCities", () => {
     expect(readStored(RECENT_CITIES_STORAGE_KEY)).toEqual([])
   })
 
+  it("atualiza recentes com snapshot de temperatura sem criar item novo", () => {
+    const { result } = renderHook(() => useLocalCities())
+
+    act(() => {
+      result.current.addRecent(rio)
+      result.current.updateRecentWeather(rio, {
+        forecastDate: "2026-05-20",
+        minTemperatureC: 20,
+        maxTemperatureC: 28,
+      })
+    })
+
+    expect(result.current.recent).toEqual([
+      {
+        ...rio,
+        searchedAt: "2026-05-20T12:00:00.000Z",
+        weatherSnapshot: {
+          forecastDate: "2026-05-20",
+          minTemperatureC: 20,
+          maxTemperatureC: 28,
+        },
+      },
+    ])
+  })
+
   it("alterna favoritos e informa se uma cidade esta favoritada", () => {
     const { result } = renderHook(() => useLocalCities())
 
@@ -120,7 +157,9 @@ describe("useLocalCities", () => {
 
     const { result } = renderHook(() => useLocalCities())
 
-    expect(result.current.recent).toEqual([rio])
+    expect(result.current.recent).toEqual([
+      { ...rio, searchedAt: "2026-05-20T12:00:00.000Z" },
+    ])
   })
 })
 
