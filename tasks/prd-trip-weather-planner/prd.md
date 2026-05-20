@@ -22,8 +22,10 @@ Sucesso significa que a aplicacao roda localmente com os comandos do projeto, as
 - Como pessoa planejando uma viagem curta, eu quero ver diferentes resultados de cidade com pais, regiao e coordenadas para evitar selecionar um local errado.
 - Como pessoa planejando uma viagem curta, eu quero abrir a previsao de uma cidade selecionada para decidir se a viagem exige preparacao para frio, calor, chuva ou vento.
 - Como pessoa recorrente, eu quero ver cidades pesquisadas recentemente para reabrir destinos sem repetir a busca.
+- Como pessoa recorrente, eu quero que cidades recentes mantenham o dia da busca e a menor/maior temperatura conhecida para comparar destinos reabertos.
 - Como pessoa recorrente, eu quero limpar minhas cidades recentes para controlar os dados salvos no navegador.
 - Como pessoa interessada em um destino, eu quero favoritar e remover uma cidade favorita para acompanhar locais importantes.
+- Como pessoa interessada em destinos favoritos, eu quero ver uma estrela no destino favoritado para reconhecer rapidamente seu estado.
 - Como pessoa acessando um link direto, eu quero abrir a pagina de detalhes por URL e ainda visualizar a previsao.
 - Como avaliador tecnico do projeto, eu quero testes E2E deterministas e um teste real de integracao para confiar no comportamento principal da aplicacao.
 
@@ -46,7 +48,8 @@ Requisitos funcionais:
 9. Quando a busca falhar, a aplicacao deve mostrar uma mensagem de erro amigavel.
 10. A aplicacao deve salvar cidades pesquisadas recentemente no navegador.
 11. A aplicacao deve exibir cidades recentes na pagina inicial.
-12. A aplicacao deve permitir limpar a lista de cidades recentes.
+12. Cada cidade recente deve exibir, quando disponivel, o dia em que a busca foi registrada, a temperatura minima e a temperatura maxima da previsao consultada.
+13. A aplicacao deve permitir limpar a lista de cidades recentes.
 
 ### Detalhes e previsao da cidade
 
@@ -54,18 +57,19 @@ A pagina de detalhes mostra um resumo meteorologico para uma cidade selecionada 
 
 Requisitos funcionais:
 
-13. A aplicacao deve disponibilizar uma pagina de detalhes de cidade baseada em latitude e longitude.
-14. A pagina de detalhes deve exibir o nome da cidade quando essa informacao estiver disponivel por navegacao, URL ou dado persistido.
-15. A pagina de detalhes deve buscar a previsao usando latitude e longitude.
-16. Durante o carregamento da previsao, a aplicacao deve mostrar estado de carregamento.
-17. A pagina deve exibir um resumo de clima atual ou do dia.
-18. A pagina deve exibir previsao dos proximos dias.
-19. A previsao deve incluir temperatura minima, temperatura maxima, precipitacao ou chance/volume de chuva, vento e codigo ou descricao do clima.
-20. Quando a previsao falhar, a pagina deve mostrar erro amigavel.
-21. Quando dados indispensaveis estiverem indisponiveis, a pagina deve mostrar estado de dados indisponiveis.
-22. A pagina deve oferecer uma acao para voltar para a busca.
-23. A pagina deve permitir favoritar a cidade.
-24. A pagina deve permitir remover a cidade dos favoritos.
+14. A aplicacao deve disponibilizar uma pagina de detalhes de cidade baseada em latitude e longitude.
+15. A pagina de detalhes deve exibir o nome da cidade quando essa informacao estiver disponivel por navegacao, URL ou dado persistido.
+16. A pagina de detalhes deve buscar a previsao usando latitude e longitude.
+17. Durante o carregamento da previsao, a aplicacao deve mostrar estado de carregamento.
+18. A pagina deve exibir um resumo de clima atual ou do dia.
+19. A pagina deve exibir previsao dos proximos dias.
+20. A previsao deve incluir temperatura minima, temperatura maxima, precipitacao ou chance/volume de chuva, vento e codigo ou descricao do clima.
+21. Quando a previsao falhar, a pagina deve mostrar erro amigavel.
+22. Quando dados indispensaveis estiverem indisponiveis, a pagina deve mostrar estado de dados indisponiveis.
+23. A pagina deve oferecer uma acao para voltar para a busca.
+24. A pagina deve permitir favoritar a cidade.
+25. A pagina deve permitir remover a cidade dos favoritos.
+26. A pagina deve exibir uma estrela visual no destino quando ele estiver favoritado.
 
 ### Validacao por testes
 
@@ -73,17 +77,18 @@ A cobertura E2E e parte do produto, pois o app foi definido como estudo demonstr
 
 Requisitos funcionais:
 
-25. Os testes E2E devem cobrir busca com resultado, selecao de cidade e visualizacao da previsao.
-26. Os testes E2E devem cobrir busca sem resultados.
-27. Os testes E2E devem cobrir falha na busca.
-28. Os testes E2E devem cobrir falha na previsao.
-29. Os testes E2E devem cobrir exibicao de cidade em recentes.
-30. Os testes E2E devem cobrir limpeza de recentes.
-31. Os testes E2E devem cobrir favoritar e remover favorito.
-32. Os testes E2E devem cobrir deep link direto para a pagina de detalhes.
-33. Os testes E2E devem validar o layout principal em viewport mobile.
-34. Os testes E2E principais devem usar mocks de rede para manter determinismo.
-35. Deve existir ao menos um teste E2E real obrigatorio contra backend e API publica.
+27. Os testes E2E devem cobrir busca com resultado, selecao de cidade e visualizacao da previsao.
+28. Os testes E2E devem cobrir busca sem resultados.
+29. Os testes E2E devem cobrir falha na busca.
+30. Os testes E2E devem cobrir falha na previsao.
+31. Os testes E2E devem cobrir exibicao de cidade em recentes.
+32. Os testes E2E devem cobrir limpeza de recentes.
+33. Os testes E2E devem cobrir exibicao de dia da busca, temperatura minima e temperatura maxima em recentes quando a previsao ja foi consultada.
+34. Os testes E2E devem cobrir favoritar, remover favorito e a estrela visual de destino favoritado.
+35. Os testes E2E devem cobrir deep link direto para a pagina de detalhes.
+36. Os testes E2E devem validar o layout principal em viewport mobile.
+37. Os testes E2E principais devem usar mocks de rede para manter determinismo.
+38. Deve existir ao menos um teste E2E real obrigatorio contra backend e API publica.
 
 ## Experiencia do Usuario
 

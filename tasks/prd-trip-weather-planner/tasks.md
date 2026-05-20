@@ -9,3 +9,4 @@
 - [x] 5.0 Página de detalhes da cidade
 - [x] 6.0 Cobertura E2E
 - [x] 7.0 Validação final
+- [x] 8.0 Indicadores de favoritos e clima em recentes
