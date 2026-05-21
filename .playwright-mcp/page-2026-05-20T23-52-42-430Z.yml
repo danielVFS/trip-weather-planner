@@ -1,0 +1,16 @@
+- main [ref=e3]:
+  - region "Trip Weather Planner" [ref=e4]:
+    - generic [ref=e5]:
+      - paragraph [ref=e6]: Planejamento por clima
+      - heading "Trip Weather Planner" [level=1] [ref=e7]
+      - paragraph [ref=e8]: Encontre o destino correto, compare cidades parecidas e abra a previsao para decidir como preparar a viagem.
+    - generic [ref=e9]:
+      - generic [ref=e10]: Cidade
+      - generic [ref=e11]:
+        - searchbox "Cidade" [ref=e12]
+        - button "Buscar" [ref=e13] [cursor=pointer]
+  - region "Resultados" [ref=e14]:
+    - heading "Resultados" [level=2] [ref=e16]
+  - region "Recentes" [ref=e17]:
+    - heading "Recentes" [level=2] [ref=e19]
+    - paragraph [ref=e20]: As cidades selecionadas aparecem aqui para acesso rapido.

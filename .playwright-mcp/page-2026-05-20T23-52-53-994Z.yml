@@ -1,0 +1,89 @@
+- main [ref=e3]:
+  - region "Trip Weather Planner" [ref=e4]:
+    - generic [ref=e5]:
+      - paragraph [ref=e6]: Planejamento por clima
+      - heading "Trip Weather Planner" [level=1] [ref=e7]
+      - paragraph [ref=e8]: Encontre o destino correto, compare cidades parecidas e abra a previsao para decidir como preparar a viagem.
+    - generic [ref=e9]:
+      - generic [ref=e10]: Cidade
+      - generic [ref=e11]:
+        - searchbox "Cidade" [ref=e12]: Rio de Janeiro
+        - button "Buscar" [ref=e13] [cursor=pointer]
+  - region "Resultados" [ref=e14]:
+    - generic [ref=e15]:
+      - heading "Resultados" [level=2] [ref=e16]
+      - generic [ref=e21]: 10 cidades
+    - list [ref=e22]:
+      - listitem [ref=e23]:
+        - link "Rio de Janeiro Rio de Janeiro, Brasil -22,91 lat, -43,18 lon" [ref=e24] [cursor=pointer]:
+          - /url: /city?id=3451190&lat=-22.90642&lon=-43.18223&name=Rio+de+Janeiro&country=Brasil&region=Rio+de+Janeiro&timezone=America%2FSao_Paulo
+          - generic [ref=e25]:
+            - generic [ref=e27]: Rio de Janeiro
+            - generic [ref=e28]: Rio de Janeiro, Brasil
+            - generic [ref=e29]: "-22,91 lat, -43,18 lon"
+      - listitem [ref=e30]:
+        - link "Río de Janeiro Chiapas, México 16,11 lat, -91,54 lon" [ref=e31] [cursor=pointer]:
+          - /url: /city?id=8871984&lat=16.11278&lon=-91.5425&name=R%C3%ADo+de+Janeiro&country=M%C3%A9xico&region=Chiapas&timezone=America%2FMexico_City
+          - generic [ref=e32]:
+            - generic [ref=e34]: Río de Janeiro
+            - generic [ref=e35]: Chiapas, México
+            - generic [ref=e36]: 16,11 lat, -91,54 lon
+      - listitem [ref=e37]:
+        - link "Río de Janeiro Chiapas, México 17,49 lat, -93,1 lon" [ref=e38] [cursor=pointer]:
+          - /url: /city?id=8907915&lat=17.49389&lon=-93.10333&name=R%C3%ADo+de+Janeiro&country=M%C3%A9xico&region=Chiapas&timezone=America%2FMexico_City
+          - generic [ref=e39]:
+            - generic [ref=e41]: Río de Janeiro
+            - generic [ref=e42]: Chiapas, México
+            - generic [ref=e43]: 17,49 lat, -93,1 lon
+      - listitem [ref=e44]:
+        - link "Río de Janeiro Loreto, Peru -4,38 lat, -71,82 lon" [ref=e45] [cursor=pointer]:
+          - /url: /city?id=3692867&lat=-4.38333&lon=-71.81667&name=R%C3%ADo+de+Janeiro&country=Peru&region=Loreto&timezone=America%2FLima
+          - generic [ref=e46]:
+            - generic [ref=e48]: Río de Janeiro
+            - generic [ref=e49]: Loreto, Peru
+            - generic [ref=e50]: "-4,38 lat, -71,82 lon"
+      - listitem [ref=e51]:
+        - link "Río de Janeiro Caldas, Colômbia 5,02 lat, -75,85 lon" [ref=e52] [cursor=pointer]:
+          - /url: /city?id=3781381&lat=5.02&lon=-75.85278&name=R%C3%ADo+de+Janeiro&country=Col%C3%B4mbia&region=Caldas&timezone=America%2FBogota
+          - generic [ref=e53]:
+            - generic [ref=e55]: Río de Janeiro
+            - generic [ref=e56]: Caldas, Colômbia
+            - generic [ref=e57]: 5,02 lat, -75,85 lon
+      - listitem [ref=e58]:
+        - link "Río de Janeiro Caldas, Colômbia 5,35 lat, -75,85 lon" [ref=e59] [cursor=pointer]:
+          - /url: /city?id=3785151&lat=5.35417&lon=-75.85333&name=R%C3%ADo+de+Janeiro&country=Col%C3%B4mbia&region=Caldas&timezone=America%2FBogota
+          - generic [ref=e60]:
+            - generic [ref=e62]: Río de Janeiro
+            - generic [ref=e63]: Caldas, Colômbia
+            - generic [ref=e64]: 5,35 lat, -75,85 lon
+      - listitem [ref=e65]:
+        - link "Río de Janeiro Tolima, Colômbia 3,84 lat, -75,66 lon" [ref=e66] [cursor=pointer]:
+          - /url: /city?id=3791710&lat=3.84167&lon=-75.65722&name=R%C3%ADo+de+Janeiro&country=Col%C3%B4mbia&region=Tolima&timezone=America%2FBogota
+          - generic [ref=e67]:
+            - generic [ref=e69]: Río de Janeiro
+            - generic [ref=e70]: Tolima, Colômbia
+            - generic [ref=e71]: 3,84 lat, -75,66 lon
+      - listitem [ref=e72]:
+        - link "Río de Janeiro Antioquia, Colômbia 6,29 lat, -75,62 lon" [ref=e73] [cursor=pointer]:
+          - /url: /city?id=8261772&lat=6.28635&lon=-75.61506&name=R%C3%ADo+de+Janeiro&country=Col%C3%B4mbia&region=Antioquia&timezone=America%2FBogota
+          - generic [ref=e74]:
+            - generic [ref=e76]: Río de Janeiro
+            - generic [ref=e77]: Antioquia, Colômbia
+            - generic [ref=e78]: 6,29 lat, -75,62 lon
+      - listitem [ref=e79]:
+        - link "Río de Janeiro Cesar, Colômbia 10,06 lat, -73,29 lon" [ref=e80] [cursor=pointer]:
+          - /url: /city?id=8560032&lat=10.05928&lon=-73.28724&name=R%C3%ADo+de+Janeiro&country=Col%C3%B4mbia&region=Cesar&timezone=America%2FBogota
+          - generic [ref=e81]:
+            - generic [ref=e83]: Río de Janeiro
+            - generic [ref=e84]: Cesar, Colômbia
+            - generic [ref=e85]: 10,06 lat, -73,29 lon
+      - listitem [ref=e86]:
+        - link "Río de Janeiro Madre de Deus, Peru -11,2 lat, -69,44 lon" [ref=e87] [cursor=pointer]:
+          - /url: /city?id=11511661&lat=-11.19744&lon=-69.44338&name=R%C3%ADo+de+Janeiro&country=Peru&region=Madre+de+Deus&timezone=America%2FLima
+          - generic [ref=e88]:
+            - generic [ref=e90]: Río de Janeiro
+            - generic [ref=e91]: Madre de Deus, Peru
+            - generic [ref=e92]: "-11,2 lat, -69,44 lon"
+  - region "Recentes" [ref=e17]:
+    - heading "Recentes" [level=2] [ref=e19]
+    - paragraph [ref=e20]: As cidades selecionadas aparecem aqui para acesso rapido.

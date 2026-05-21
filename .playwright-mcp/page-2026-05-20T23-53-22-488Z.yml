@@ -1,0 +1,36 @@
+- main [ref=e3]:
+  - region "Trip Weather Planner" [ref=e4]:
+    - generic [ref=e5]:
+      - paragraph [ref=e6]: Planejamento por clima
+      - heading "Trip Weather Planner" [level=1] [ref=e7]
+      - paragraph [ref=e8]: Encontre o destino correto, compare cidades parecidas e abra a previsao para decidir como preparar a viagem.
+    - generic [ref=e9]:
+      - generic [ref=e10]: Cidade
+      - generic [ref=e11]:
+        - searchbox "Cidade" [ref=e12]
+        - button "Buscar" [ref=e13] [cursor=pointer]
+  - region "Resultados" [ref=e14]:
+    - heading "Resultados" [level=2] [ref=e16]
+  - region "Recentes" [ref=e17]:
+    - generic [ref=e18]:
+      - heading "Recentes" [level=2] [ref=e19]
+      - button "Limpar recentes" [ref=e20] [cursor=pointer]
+    - list [ref=e21]:
+      - listitem [ref=e22]:
+        - link "Rio de Janeiro Rio de Janeiro, Brasil -22,91 lat, -43,18 lon Última vez buscado 20/05/2026 Min 21 °C Max 21 °C" [ref=e23] [cursor=pointer]:
+          - /url: /city?id=3451190&lat=-22.90642&lon=-43.18223&name=Rio+de+Janeiro&country=Brasil&region=Rio+de+Janeiro&timezone=America%2FSao_Paulo
+          - generic [ref=e24]:
+            - generic [ref=e26]: Rio de Janeiro
+            - generic [ref=e27]: Rio de Janeiro, Brasil
+            - generic [ref=e28]: "-22,91 lat, -43,18 lon"
+          - generic [ref=e29]:
+            - generic [ref=e30]:
+              - generic [ref=e31]: Última vez buscado
+              - generic [ref=e32]: 20/05/2026
+            - generic [ref=e33]:
+              - generic [ref=e34]:
+                - generic [ref=e35]: Min
+                - generic [ref=e36]: 21 °C
+              - generic [ref=e37]:
+                - generic [ref=e38]: Max
+                - generic [ref=e39]: 21 °C

@@ -1,11 +1,14 @@
 import { defineConfig, devices } from "@playwright/test"
 
+const isRecording = process.env.PW_RECORDING === "1"
+const slowMo = Number(process.env.PLAYWRIGHT_SLOW_MO ?? 1000)
+
 export default defineConfig({
   testDir: "./e2e",
-  fullyParallel: true,
+  fullyParallel: !isRecording,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 1,
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI || isRecording ? 1 : undefined,
   reporter: [["list"], ["html", { open: "never" }]],
   timeout: 60_000,
   expect: {
@@ -13,6 +16,11 @@ export default defineConfig({
   },
   use: {
     baseURL: "http://localhost:5173",
+    launchOptions: isRecording
+      ? {
+          slowMo,
+        }
+      : undefined,
     trace: "on-first-retry",
     actionTimeout: 10_000,
   },

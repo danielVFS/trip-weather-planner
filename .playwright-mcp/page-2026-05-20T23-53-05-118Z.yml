@@ -1,0 +1,15 @@
+- main [ref=e3]:
+  - region "Rio de Janeiro" [ref=e4]:
+    - generic [ref=e5]:
+      - paragraph [ref=e6]: Previsao por coordenadas
+      - heading "Rio de Janeiro" [level=1] [ref=e7]
+      - paragraph [ref=e8]:
+        - text: Rio de Janeiro, Brasil
+        - generic [ref=e9]: "-22,91 lat, -43,18 lon"
+    - generic [ref=e10]:
+      - link "Voltar para busca" [ref=e11] [cursor=pointer]:
+        - /url: /
+      - button "Favoritar cidade" [ref=e12] [cursor=pointer]: ★Favoritar cidade
+  - region "Resumo" [ref=e13]:
+    - heading "Resumo" [level=2] [ref=e15]
+    - status [ref=e16]: Carregando previsao...

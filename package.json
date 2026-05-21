@@ -18,6 +18,7 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed",
+    "test:e2e:record": "PW_RECORDING=1 PLAYWRIGHT_SLOW_MO=1000 playwright test --headed --workers=1 --project=chromium --project=firefox --project=mobile-chrome",
     "test:e2e:ui": "playwright test --ui"
   },
   "devDependencies": {

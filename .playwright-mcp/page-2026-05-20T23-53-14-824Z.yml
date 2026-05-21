@@ -1,0 +1,130 @@
+- main [ref=e3]:
+  - region "Rio de Janeiro" [ref=e4]:
+    - generic [ref=e5]:
+      - paragraph [ref=e6]: Previsao por coordenadas
+      - heading "Rio de Janeiro" [level=1] [ref=e7]
+      - paragraph [ref=e8]:
+        - text: Rio de Janeiro, Brasil
+        - generic [ref=e9]: "-22,91 lat, -43,18 lon"
+    - generic [ref=e10]:
+      - link "Voltar para busca" [ref=e11] [cursor=pointer]:
+        - /url: /
+      - button "Remover favorito" [active] [ref=e130] [cursor=pointer]:
+        - generic [ref=e131]: ★
+        - text: Remover favorito
+  - region "Resumo" [ref=e13]:
+    - generic [ref=e14]:
+      - heading "Resumo" [level=2] [ref=e15]
+      - generic [ref=e17]: America/Sao_Paulo
+    - article [ref=e18]:
+      - generic [ref=e19]:
+        - paragraph [ref=e20]: qua., 20 de mai.
+        - heading "Garoa fraca" [level=2] [ref=e21]
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - term [ref=e24]: Minima
+          - definition [ref=e25]: 21 °C
+        - generic [ref=e26]:
+          - term [ref=e27]: Maxima
+          - definition [ref=e28]: 21 °C
+        - generic [ref=e29]:
+          - term [ref=e30]: Chuva
+          - definition [ref=e31]: 96% / 0,1 mm
+        - generic [ref=e32]:
+          - term [ref=e33]: Vento
+          - definition [ref=e34]: 11 km/h
+  - region "Proximos dias" [ref=e35]:
+    - generic [ref=e36]:
+      - heading "Proximos dias" [level=2] [ref=e37]
+      - generic [ref=e38]: 5 dias
+    - list [ref=e39]:
+      - listitem [ref=e40]:
+        - generic [ref=e41]:
+          - paragraph [ref=e42]: qua., 20 de mai.
+          - heading "Chuva moderada" [level=3] [ref=e43]
+          - paragraph [ref=e44]: Codigo 63
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - term [ref=e47]: Min
+            - definition [ref=e48]: 21 °C
+          - generic [ref=e49]:
+            - term [ref=e50]: Max
+            - definition [ref=e51]: 23 °C
+          - generic [ref=e52]:
+            - term [ref=e53]: Chuva
+            - definition [ref=e54]: 96% / 10,1 mm
+          - generic [ref=e55]:
+            - term [ref=e56]: Vento
+            - definition [ref=e57]: 12 km/h
+      - listitem [ref=e58]:
+        - generic [ref=e59]:
+          - paragraph [ref=e60]: qui., 21 de mai.
+          - heading "Chuva leve" [level=3] [ref=e61]
+          - paragraph [ref=e62]: Codigo 61
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - term [ref=e65]: Min
+            - definition [ref=e66]: 20 °C
+          - generic [ref=e67]:
+            - term [ref=e68]: Max
+            - definition [ref=e69]: 22 °C
+          - generic [ref=e70]:
+            - term [ref=e71]: Chuva
+            - definition [ref=e72]: 100% / 15,9 mm
+          - generic [ref=e73]:
+            - term [ref=e74]: Vento
+            - definition [ref=e75]: 16 km/h
+      - listitem [ref=e76]:
+        - generic [ref=e77]:
+          - paragraph [ref=e78]: sex., 22 de mai.
+          - heading "Nublado" [level=3] [ref=e79]
+          - paragraph [ref=e80]: Codigo 3
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - term [ref=e83]: Min
+            - definition [ref=e84]: 20 °C
+          - generic [ref=e85]:
+            - term [ref=e86]: Max
+            - definition [ref=e87]: 22 °C
+          - generic [ref=e88]:
+            - term [ref=e89]: Chuva
+            - definition [ref=e90]: 59% / 0 mm
+          - generic [ref=e91]:
+            - term [ref=e92]: Vento
+            - definition [ref=e93]: 8 km/h
+      - listitem [ref=e94]:
+        - generic [ref=e95]:
+          - paragraph [ref=e96]: sáb., 23 de mai.
+          - heading "Chuva leve" [level=3] [ref=e97]
+          - paragraph [ref=e98]: Codigo 61
+        - generic [ref=e99]:
+          - generic [ref=e100]:
+            - term [ref=e101]: Min
+            - definition [ref=e102]: 20 °C
+          - generic [ref=e103]:
+            - term [ref=e104]: Max
+            - definition [ref=e105]: 24 °C
+          - generic [ref=e106]:
+            - term [ref=e107]: Chuva
+            - definition [ref=e108]: 23% / 4 mm
+          - generic [ref=e109]:
+            - term [ref=e110]: Vento
+            - definition [ref=e111]: 14 km/h
+      - listitem [ref=e112]:
+        - generic [ref=e113]:
+          - paragraph [ref=e114]: dom., 24 de mai.
+          - heading "Garoa fraca" [level=3] [ref=e115]
+          - paragraph [ref=e116]: Codigo 51
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - term [ref=e119]: Min
+            - definition [ref=e120]: 20 °C
+          - generic [ref=e121]:
+            - term [ref=e122]: Max
+            - definition [ref=e123]: 25 °C
+          - generic [ref=e124]:
+            - term [ref=e125]: Chuva
+            - definition [ref=e126]: 37% / 1,8 mm
+          - generic [ref=e127]:
+            - term [ref=e128]: Vento
+            - definition [ref=e129]: 14 km/h
