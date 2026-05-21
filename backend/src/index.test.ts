@@ -16,6 +16,7 @@ import type {
 
 afterEach(() => {
   vi.unstubAllGlobals()
+  vi.restoreAllMocks()
 })
 
 describe("GET /health", () => {
@@ -38,6 +39,26 @@ describe("GET /health", () => {
 
     expect(response.headers.get("access-control-allow-origin")).toBe(
       "http://localhost:5173",
+    )
+  })
+
+  it("logs structured request metadata", async () => {
+    const info = vi.spyOn(console, "info").mockImplementation(() => {})
+
+    const response = await app.request("/health")
+
+    expect(response.status).toBe(200)
+    expect(info).toHaveBeenCalledWith(
+      expect.stringContaining('"route":"/health"'),
+    )
+    expect(JSON.parse(info.mock.calls.at(-1)?.[0] ?? "{}")).toEqual(
+      expect.objectContaining({
+        errorType: "none",
+        method: "GET",
+        origin: "internal",
+        route: "/health",
+        status: 200,
+      }),
     )
   })
 })
@@ -128,7 +149,7 @@ describe("weather contracts and normalization", () => {
       current: {
         date: "2026-05-19",
         minTemperatureC: 19,
-        maxTemperatureC: 25.2,
+        maxTemperatureC: 27,
         precipitationMm: 0.2,
         precipitationProbabilityPct: 45,
         maxWindKmh: 14,

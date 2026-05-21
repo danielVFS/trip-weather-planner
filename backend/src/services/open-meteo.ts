@@ -213,7 +213,7 @@ function normalizeCurrentForecast(
   return {
     date: dateOnlyField(optionalStringField(current.time) ?? fallbackDay.date),
     minTemperatureC: fallbackDay.minTemperatureC,
-    maxTemperatureC: numberField(current.temperature_2m),
+    maxTemperatureC: fallbackDay.maxTemperatureC,
     precipitationMm: numberField(current.precipitation),
     ...(fallbackDay.precipitationProbabilityPct !== undefined
       ? {

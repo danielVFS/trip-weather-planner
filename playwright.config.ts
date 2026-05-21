@@ -1,6 +1,7 @@
 import { defineConfig, devices } from "@playwright/test"
 
 const isRecording = process.env.PW_RECORDING === "1"
+const includeWebKit = process.env.PLAYWRIGHT_INCLUDE_WEBKIT === "1"
 const slowMo = Number(process.env.PLAYWRIGHT_SLOW_MO ?? 1000)
 
 export default defineConfig({
@@ -33,10 +34,14 @@ export default defineConfig({
       name: "firefox",
       use: { ...devices["Desktop Firefox"] },
     },
-    {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
-    },
+    ...(includeWebKit
+      ? [
+          {
+            name: "webkit",
+            use: { ...devices["Desktop Safari"] },
+          },
+        ]
+      : []),
     {
       name: "mobile-chrome",
       use: { ...devices["Pixel 5"] },

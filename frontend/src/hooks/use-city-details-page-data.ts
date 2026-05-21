@@ -154,7 +154,7 @@ function useForecastRequest(
             : { requestKey, state: "empty" },
         )
         if (hasUsableForecast(nextForecast) && city) {
-          updateRecentWeather(city, forecastSnapshot(nextForecast.current))
+          updateRecentWeather(city, forecastSnapshot(nextForecast.daily[0]))
         }
       })
       .catch((error: unknown) => {
@@ -272,7 +272,11 @@ function hasUsableForecast(forecast: WeatherForecast): boolean {
   return Boolean(forecast.current && forecast.daily.length > 0)
 }
 
-function forecastSnapshot(day: ForecastDay): ForecastSnapshot {
+function forecastSnapshot(day: ForecastDay | undefined): ForecastSnapshot {
+  if (!day) {
+    throw new Error("Forecast day is required to create a recent snapshot.")
+  }
+
   return {
     forecastDate: day.date,
     minTemperatureC: day.minTemperatureC,

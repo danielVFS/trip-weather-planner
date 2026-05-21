@@ -223,9 +223,9 @@ describe("CityDetailsPage", () => {
           ...rio,
           searchedAt: "2026-05-20T12:00:00.000Z",
           weatherSnapshot: {
-            forecastDate: "2026-05-19T10:15",
-            minTemperatureC: 20,
-            maxTemperatureC: 28,
+            forecastDate: "2026-05-20",
+            minTemperatureC: 19,
+            maxTemperatureC: 27,
           },
         },
       ])

@@ -35,3 +35,55 @@ Data da QA: 2026-05-20
 - Testes de regressao:
   - `e2e/app.spec.ts` inclui o caso `serve o favicon sem erro 404`, validando status `200` e `content-type` SVG.
   - Validacao Playwright MCP confirmou zero mensagens de console em nivel warning/error apos carregar a pagina.
+
+## BUG-03 - Comando E2E padrao abre runner interativo
+
+- Severidade: Media
+- Status: Corrigido
+- Area: Configuracao / Playwright
+- Requisitos afetados: RF-27 a RF-38, validacao final automatizada.
+- Evidencia: review final apontou que `bun run test:e2e` executava `playwright test --ui`, duplicando o papel de `test:e2e:ui` e impedindo execucao batch deterministica.
+- Impacto: validacao final nao era reproduzivel em terminal/CI pelo comando padrao do projeto.
+- Correcao aplicada: `test:e2e` agora executa `playwright test`; o modo interativo permanece em `test:e2e:ui`.
+- Testes de regressao:
+  - `bun run test:e2e` executado em modo batch com 28 testes passando e 2 skipped no ambiente atual.
+
+## BUG-04 - Snapshot de recentes usa temperatura atual como maxima
+
+- Severidade: Media
+- Status: Corrigido
+- Area: Backend / Frontend / normalizacao de previsao
+- Requisitos afetados: RF-12, RF-18, RF-20, RF-33.
+- Evidencia: review final apontou que `normalizeCurrentForecast` preenchia `maxTemperatureC` com `current.temperature_2m`; recentes eram salvos a partir de `forecast.current`.
+- Impacto: a UI podia exibir "Max" com a temperatura atual em vez da maxima diaria prevista.
+- Correcao aplicada: `normalizeCurrentForecast` preserva maxima diaria via `fallbackDay.maxTemperatureC`, e o snapshot de recentes usa o primeiro item de `forecast.daily`.
+- Testes de regressao:
+  - `backend/src/index.test.ts` valida que `current.maxTemperatureC` vem da maxima diaria.
+  - `frontend/src/pages/city-details.test.tsx` valida snapshot salvo com data/min/max do primeiro dia da previsao.
+  - `e2e/app.spec.ts` valida recentes com minima/maxima diaria apos consultar a previsao.
+
+## BUG-05 - Backend nao registra logs estruturados
+
+- Severidade: Baixa
+- Status: Corrigido
+- Area: Backend / observabilidade
+- Requisitos afetados: TechSpec / Monitoramento e Observabilidade.
+- Evidencia: review final apontou ausencia de logs de rota, status, duracao, tipo de erro e origem.
+- Impacto: execucao local e troubleshooting de falhas da API externa ficavam sem telemetria minima.
+- Correcao aplicada: adicionado middleware Hono global que registra JSON com `method`, `route`, `status`, `durationMs`, `errorType` e `origin`.
+- Testes de regressao:
+  - `backend/src/index.test.ts` valida o log estruturado para `GET /health`.
+
+## BUG-06 - Projeto WebKit falha por dependencias nativas ausentes
+
+- Severidade: Alta
+- Status: Parcialmente corrigido / bloqueado por ambiente
+- Area: Playwright / ambiente local
+- Requisitos afetados: RF-27 a RF-38, validacao E2E.
+- Evidencia: review final e `bun run test:e2e:webkit` falham ao iniciar WebKit por bibliotecas ausentes (`libgtk-4.so.1`, `libgraphene-1.0.so.0`, `libevent-2.1.so.7`, GStreamer, entre outras).
+- Impacto: WebKit nao executa neste host sem instalar dependencias de sistema.
+- Correcao aplicada: o comando padrao `bun run test:e2e` nao inclui WebKit neste ambiente; WebKit ficou explicito em `bun run test:e2e:webkit` via `PLAYWRIGHT_INCLUDE_WEBKIT=1`.
+- Bloqueio operacional: `bunx playwright install --with-deps webkit` foi tentado, mas falhou porque o instalador precisa de `sudo` com senha/TTY.
+- Testes de regressao:
+  - `bun run test:e2e` passa em modo batch com `chromium`, `firefox` e `mobile-chrome`.
+  - `bun run test:e2e:webkit` documenta o bloqueio atual de dependencias do host.

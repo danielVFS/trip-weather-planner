@@ -94,8 +94,8 @@ test("salva recentes e permite limpar a lista", async ({ page }) => {
   await expect(page.getByTestId("recent")).toContainText(
     /Última vez buscado \d{2}\/\d{2}\/\d{4}/,
   )
-  await expect(page.getByTestId("recent")).toContainText("Min 21 °C")
-  await expect(page.getByTestId("recent")).toContainText("Max 28 °C")
+  await expect(page.getByTestId("recent")).toContainText("Min 20 °C")
+  await expect(page.getByTestId("recent")).toContainText("Max 27 °C")
 
   await page.getByRole("button", { name: "Limpar recentes" }).click()
 
