@@ -176,7 +176,9 @@ describe("HomePage", () => {
     render(<HomePage />)
 
     expect(screen.getByTestId("recent")).toHaveTextContent("Rio de Janeiro")
-    expect(screen.getByTestId("recent")).toHaveTextContent("Busca: 20/05/2026")
+    expect(screen.getByTestId("recent")).toHaveTextContent(
+      "Última vez buscado 20/05/2026",
+    )
     expect(screen.getByTestId("recent")).toHaveTextContent("Min 20 °C")
     expect(screen.getByTestId("recent")).toHaveTextContent("Max 28 °C")
 

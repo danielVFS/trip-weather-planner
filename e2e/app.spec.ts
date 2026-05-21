@@ -91,7 +91,9 @@ test("salva recentes e permite limpar a lista", async ({ page }) => {
   await page.getByRole("link", { name: "Voltar para busca" }).click()
 
   await expect(page.getByTestId("recent")).toContainText("Rio de Janeiro")
-  await expect(page.getByTestId("recent")).toContainText(/Busca: \d{2}\/\d{2}\/\d{4}/)
+  await expect(page.getByTestId("recent")).toContainText(
+    /Última vez buscado \d{2}\/\d{2}\/\d{4}/,
+  )
   await expect(page.getByTestId("recent")).toContainText("Min 21 °C")
   await expect(page.getByTestId("recent")).toContainText("Max 28 °C")
 
@@ -101,6 +103,13 @@ test("salva recentes e permite limpar a lista", async ({ page }) => {
   await expect(
     page.getByText("As cidades selecionadas aparecem aqui para acesso rapido."),
   ).toBeVisible()
+})
+
+test("serve o favicon sem erro 404", async ({ page }) => {
+  const faviconResponse = await page.request.get("/favicon.svg")
+
+  expect(faviconResponse.status()).toBe(200)
+  expect(faviconResponse.headers()["content-type"]).toContain("image/svg+xml")
 })
 
 test("permite favoritar e remover favorito", async ({ page }) => {

@@ -5,7 +5,7 @@ Data da QA: 2026-05-20
 ## BUG-01 - Testes esperam prefixo de data diferente do texto renderizado em recentes
 
 - Severidade: Media
-- Status: Aberto
+- Status: Corrigido
 - Area: Frontend / testes unitarios / E2E
 - Requisitos afetados: RF-12, RF-31, RF-32, RF-33, RF-37
 - Evidencias:
@@ -17,13 +17,21 @@ Data da QA: 2026-05-20
 - Resultado atual: UI renderiza `Última vez buscado 20/05/2026`.
 - Impacto: o comportamento funcional de persistir recentes com data/min/max aparece operante na exploracao manual, mas a suite automatizada obrigatoria nao passa. Isso impede aprovacao de QA conforme o PRD exige E2E deterministico aprovado.
 - Observacao: decidir se o contrato de UI deve voltar para `Busca:` ou se os testes devem ser atualizados para o texto atual acessivel.
+- Correcao aplicada: testes unitario e E2E atualizados para validar o contrato acessivel renderizado pela UI: `Última vez buscado dd/mm/aaaa`, mantendo data, temperatura minima e maxima exigidas pelo PRD.
+- Testes de regressao:
+  - `frontend/src/pages/home.test.tsx` cobre recentes persistidos com texto `Última vez buscado 20/05/2026`, min e max.
+  - `e2e/app.spec.ts` cobre o fluxo salvar recentes/voltar para busca/limpar recentes em `chromium`, `firefox` e `mobile-chrome`.
 
 ## BUG-02 - Console registra 404 para favicon.ico
 
 - Severidade: Baixa
-- Status: Aberto
+- Status: Corrigido
 - Area: Frontend / asset estatico
 - Requisitos afetados: qualidade geral da experiencia, sem bloqueio funcional direto.
 - Evidencia: Playwright MCP `browser_console_messages` registrou `Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/favicon.ico`.
 - Impacto: ruido em console durante QA e pode mascarar regressões mais relevantes.
 - Recomendacao: adicionar favicon referenciado pelo `index.html` ou remover a referencia implicita/explicita.
+- Correcao aplicada: adicionado `frontend/public/favicon.svg` e referencia explicita em `frontend/index.html` com `rel="icon"`, evitando a requisicao implicita sem asset configurado.
+- Testes de regressao:
+  - `e2e/app.spec.ts` inclui o caso `serve o favicon sem erro 404`, validando status `200` e `content-type` SVG.
+  - Validacao Playwright MCP confirmou zero mensagens de console em nivel warning/error apos carregar a pagina.
